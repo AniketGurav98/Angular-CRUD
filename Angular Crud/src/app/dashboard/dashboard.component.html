@@ -1,0 +1,126 @@
+<!-- <p>dashboard works!</p> -->
+<!-- <div *ngIf="mode=='add'"> -->
+  <div class="col-sm-6">
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="/employee/detail">Employee Dashboard</a></li>
+        <li class="breadcrumb-item active">Adding Page</li>
+    </ol>
+</div>
+<div>
+  <form [formGroup]="formValue" >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name <span class="mandatory_asterisk">*</span></label>
+      <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1"
+        aria-describedby="emailHelp">
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">last name</label>
+      <input type="text" formControlName="lastName" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email ID <span class="mandatory_asterisk">*</span></label>
+      <input type="email" formControlName="email" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Mobile Number<span
+          class="mandatory_asterisk">*</span></label>
+      <input type="text" formControlName="mobile" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Salary</label>
+      <input type="text" formControlName="salary" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Address</label>
+      <input type="text" formControlName="address" class="form-control">
+    </div>
+
+    
+  
+
+    <label > Type Of Service </label>
+    <div class="radio group">
+     
+    <div class="form-check">
+      <input class="form-check-input"   type="radio"  id="flexRadioDefault1" value="Goverment" formControlName="radio" > 
+      <label class="form-check-label" for="flexRadioDefault1">
+        Goverment
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input"  type="radio"  id="flexRadioDefault2" value="Private" formControlName="radio" >
+      <label class="form-check-label" for="flexRadioDefault2">
+        Private
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio"  id="flexRadioDefault3" value="Other" formControlName="radio">
+      <label class="form-check-label" for="flexRadioDefault3">
+        Other
+      </label>
+    </div>
+    
+
+  </div>
+  <br>
+  <label >Area Of Interest</label>
+
+
+    
+  <div class="form-check">
+    
+    <input class="form-check-input" type="checkbox" value="Game" id="flexCheckDefault" formControlName="Game">
+    <label class="form-check-label" for="flexCheckDefault">
+      Game
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Politics" id="flexCheckChecked" formControlName="Politics" >
+    <label class="form-check-label" for="flexCheckChecked">
+      Politics
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Social Works" id="flexCheckChecked2" formControlName="Social">
+    <label class="form-check-label" for="flexCheckChecked2">
+      Social Works
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Art" id="flexCheckChecked3" formControlName="Art" >
+    <label class="form-check-label" for="flexCheckChecked3">
+      Art
+    </label>
+  </div>
+
+  <!-- <div *ngFor="let n of food">
+    <input type="checkbox" formControlName="skill" > {{n.name}}
+   </div> -->
+
+
+  <div class="dropdown">
+   <label for="countrytype">City :</label>
+   <select  formControlName="city" >
+    <option *ngFor="let city of cities"  >{{city}}</option>
+   </select>
+  </div>
+
+  <div class="dropdown">
+    <label for="countrytype">degree :</label>
+  <select formControlName="role">
+  <option *ngFor="let role of department" value="{{role.id}}">{{role.name}}</option>
+  </select>
+  </div>
+
+  </form>
+  <div class="modal-footer">
+    <!-- <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+    <a href="employee/detail" class="btn btn-md btn-dark mt-30">Cancel</a>
+    <button type="button" (click)="postEmployeeDetails()" [disabled]="!(formValue.valid)"
+      class="btn btn-primary">Add</button>
+  </div>
+
+</div>
+<!-- </div>   -->
